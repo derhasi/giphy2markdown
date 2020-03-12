@@ -34,7 +34,8 @@ $(function() {
         var $item = $('<li class="grid-item"></li>');
         var $img = $('<img src="' + datumn.images.fixed_width.url + '" height="' + datumn.images.fixed_width.height + '">');
         var $overlay = $('<div class="grid-item-overlay"></div>');
-        $overlay.append('<button class="clip-button" data-clipboard-text="![](' + datumn.images.fixed_width.url + ')" href="javascript:void(0)">clip markdown text</button>')
+        $overlay.append('<button class="clip-button" data-clipboard-text="![' + this.query + '](' + datumn.images.fixed_width.url + ')" href="javascript:void(0)">clip markdown text</button>')
+                .append('<button class="clip-button" data-clipboard-text="!' + datumn.images.fixed_width.url + '!" href="javascript:void(0)">clip textile</button>')
                 .append('<button class="clip-button" data-clipboard-text="' + datumn.url + '" href="javascript:void(0)">clip url</button>')
         $item.append($img).append($overlay);
         $('.grid').append($item).masonry('appended', $item);
